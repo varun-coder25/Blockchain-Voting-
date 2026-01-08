@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Decentralized voting system powered by blockchain technology. Vote securely and transparently on the Sepolia test network.">
+    <title>Decentralized Voting System | Blockchain Voting</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.9.0/dist/ethers.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div class="bg-gradient-2"></div>
+
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="title-icon">🗳️</span>
+                    Decentralized Voting
+                </h1>
+                <p class="subtitle">Powered by Blockchain Technology</p>
+            </div>
+
+            <!-- Wallet Connection -->
+            <div class="wallet-section">
+                <button id="connectWallet" class="btn btn-primary">
+                    <span class="btn-icon">🦊</span>
+                    Connect MetaMask
+                </button>
+                <div id="walletInfo" class="wallet-info hidden">
+                    <div class="wallet-badge">
+                        <span class="wallet-icon">👤</span>
+                        <span id="walletAddress" class="wallet-address"></span>
+                    </div>
+                    <div id="votingStatus" class="voting-status"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p>Connecting to blockchain...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state hidden">
+                <div class="error-icon">⚠️</div>
+                <h2>Connection Error</h2>
+                <p id="errorMessage"></p>
+                <button id="retryButton" class="btn btn-secondary">Try Again</button>
+            </div>
+
+            <!-- Voting Section -->
+            <section id="votingSection" class="voting-section hidden">
+                <div class="section-header">
+                    <h2 class="section-title">Cast Your Vote</h2>
+                    <p class="section-description">Select your preferred candidate below</p>
+                </div>
+
+                <!-- Candidates Grid -->
+                <div id="candidatesGrid" class="candidates-grid">
+                    <!-- Candidates will be dynamically loaded here -->
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <div class="section-header">
+                    <h2 class="section-title">Live Results</h2>
+                    <p class="section-description">Real-time voting statistics</p>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <canvas id="votingChart"></canvas>
+                </div>
+
+                <!-- Stats Grid -->
+                <div id="statsGrid" class="stats-grid">
+                    <!-- Stats will be dynamically loaded here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                <span class="footer-icon">⛓️</span>
+                Running on Sepolia Test Network
+            </p>
+            <p class="footer-note">Secure • Transparent • Decentralized</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
