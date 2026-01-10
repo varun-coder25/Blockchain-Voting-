@@ -3,7 +3,7 @@
 // ===================================
 
 // ⚠️ IMPORTANT: Replace these placeholders with your actual contract details
-const CONTRACT_ADDRESS = '0x74EE4419e70Abd2Fd86213E99Dd684BAeE1679Cc'; // Deployed on Sepolia testnet
+const CONTRACT_ADDRESS = '0x8Fdb66EC93d9475673E727678ec36E9F419f0fC3'; // Deployed on Sepolia testnet
 const CONTRACT_ABI = [
     // Replace this entire array with your contract ABI
     {
@@ -594,7 +594,7 @@ function resetApp() {
 // ===================================
 
 // Warn if placeholders are still in use
-if (CONTRACT_ADDRESS === '0x74EE4419e70Abd2Fd86213E99Dd684BAeE1679Cc') {
+if (CONTRACT_ADDRESS === '0x8Fdb66EC93d9475673E727678ec36E9F419f0fC3') {
     console.warn('⚠️ WARNING: Please replace CONTRACT_ADDRESS with your actual deployed contract address');
 }
 
@@ -603,4 +603,5 @@ if (CONTRACT_ABI.length === 8 && CONTRACT_ABI[0].type === 'constructor') {
 } else {
     console.warn('⚠️ WARNING: Please verify your CONTRACT_ABI is correct');
 }
+
 
